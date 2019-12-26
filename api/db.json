@@ -1,5 +1,12 @@
 {
-  "user": [],
+  "user": [
+    {
+      "Username": "gustavo",
+      "Password": "tata",
+      "Email": "gustavo.coelho@tcs.com",
+      "id": 1
+    }
+  ],
   "post": [],
   "category": [],
   "rate": []

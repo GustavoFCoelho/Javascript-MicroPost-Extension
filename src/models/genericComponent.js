@@ -73,6 +73,13 @@ class GenericComponentFactory{
         label.appendChild(span);
         return label;
     }
+
+    generateAlert(message, color){
+        const alert = document.createElement("span");
+        alert.className = color +" alert";
+        alert.appendChild(document.createTextNode(message));
+        return alert;
+    }
 }
 
 export const factory = new GenericComponentFactory();

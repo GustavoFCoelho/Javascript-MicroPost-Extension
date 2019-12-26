@@ -35,6 +35,7 @@ class LoginUI{
 
         button.appendChild(icon)
         button.classList.add("right")
+        button.addEventListener("click", loginEventHandler.loginEvent);
         span.appendChild(button)
 
         form.appendChild(span)

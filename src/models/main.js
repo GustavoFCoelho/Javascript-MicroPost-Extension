@@ -1,4 +1,5 @@
 import { RouterEvent } from "../events/RouterEventGenerator";
+import { factory } from "./genericComponent";
 
 class MainUI{
     loadMenu(user){
@@ -50,6 +51,16 @@ class MainUI{
         while (document.body.childNodes.length > 0) {
             document.body.childNodes[0].remove() 
         }
+    }
+
+    
+    showAlert(message, color){
+        const position = document.querySelector(".card-content");
+        const alert = factory.generateAlert(message, color)
+        position.insertBefore(alert, position.firstChild);
+        setTimeout(() => {
+            document.querySelector(".alert").remove()
+        }, 3000);
     }
 }
 
