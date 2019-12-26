@@ -1,3 +1,5 @@
+import { RouterEvent } from "../events/RouterEventGenerator";
+
 class MainUI{
     loadMenu(user){
         const navbar = document.createElement("nav");
@@ -15,11 +17,12 @@ class MainUI{
         if(user === null){
             const ul = document.createElement("ul")
             ul.id = "nav-mobile";
-            ul.className = "right hide-on-med-and-down"
+            ul.className = "right"
 
             const registerLink = document.createElement("a");
             registerLink.className = "registerLink";
             registerLink.textContent = "Register";
+            registerLink.addEventListener("click", RouterEvent.generateRegisterEvent);
 
             let li = document.createElement("li");
             li.appendChild(registerLink)
@@ -29,6 +32,7 @@ class MainUI{
             const loginLink = document.createElement("a");
             loginLink.className = "loginLink";
             loginLink.textContent = "Login";
+            loginLink.addEventListener("click", RouterEvent.generateLoginEvent)
 
             li = document.createElement("li");
             li.appendChild(loginLink)
@@ -40,6 +44,12 @@ class MainUI{
         navbar.appendChild(div);
 
         document.body.appendChild(navbar)
+    }
+
+    removeChildNodes(){
+        while (document.body.childNodes.length > 0) {
+            document.body.childNodes[0].remove() 
+        }
     }
 }
 

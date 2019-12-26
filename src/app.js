@@ -15,4 +15,5 @@ class App {
     }
 }
 
+export const baseUrl = "http://localhost:3000/"
 App.init();

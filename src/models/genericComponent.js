@@ -24,7 +24,7 @@ class GenericComponentFactory{
         return container;
     }
 
-    generateInputText(id, labelText, placeHolder, type){
+    generateInputText(id, labelText, type){
         const formInput = document.createElement("div");
         formInput.className = "input-field";
 
@@ -35,10 +35,6 @@ class GenericComponentFactory{
         const input = document.createElement("input");
         input.setAttribute("type",type);
         input.setAttribute("id", id);
-
-        if(placeHolder !== null){
-            input.setAttribute("placeholder", placeHolder);
-        }
 
         formInput.appendChild(input);
         formInput.appendChild(lab);
