@@ -80,6 +80,23 @@ class GenericComponentFactory{
         alert.appendChild(document.createTextNode(message));
         return alert;
     }
+
+    generateTextArea(id, labelText){
+        const formInput = document.createElement("div");
+        formInput.className = "input-field";
+
+        const lab = document.createElement("label");
+        lab.setAttribute("for", id)
+        lab.textContent = labelText;
+
+        const input = document.createElement("textarea");
+        input.setAttribute("id", id);
+        input.className = "materialize-textarea"
+
+        formInput.appendChild(input);
+        formInput.appendChild(lab);
+        return formInput
+    }
 }
 
 export const factory = new GenericComponentFactory();

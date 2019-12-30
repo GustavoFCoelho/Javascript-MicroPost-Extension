@@ -7,7 +7,38 @@
       "id": 1
     }
   ],
-  "post": [],
-  "category": [],
+  "post": [
+    {
+      "postTitle": "Longas tranças de um careca",
+      "postBody": "teste",
+      "categories": [
+        "Movie"
+      ],
+      "id": 1
+    },
+    {
+      "postTitle": "Longas tranças de um careca",
+      "postBody": "teste",
+      "categories": [
+        "Movie",
+        "Games"
+      ],
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "name": "Movie",
+      "id": 1
+    },
+    {
+      "name": "Games",
+      "id": 2
+    },
+    {
+      "name": "teste",
+      "id": 3
+    }
+  ],
   "rate": []
 }

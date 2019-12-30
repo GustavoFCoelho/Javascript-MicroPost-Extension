@@ -1,6 +1,10 @@
 class Storage{
     getLoggedUser(){
-        return localStorage.getItem("loggedUser");
+        return JSON.parse(localStorage.getItem("loggedUser"));
+    }
+
+    setUser(data){
+        localStorage.setItem("loggedUser", JSON.stringify(data))
     }
 }
 

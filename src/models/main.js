@@ -11,15 +11,16 @@ class MainUI{
 
         const a = document.createElement("a");
         a.classList.add("brand-logo");
+        a.classList.add("center");
         a.textContent = "MicroPost Application"
 
         div.appendChild(a);
 
-        if(user === null){
-            const ul = document.createElement("ul")
-            ul.id = "nav-mobile";
-            ul.className = "right"
+        const ul = document.createElement("ul");
+        ul.id = "nav-mobile";
+        ul.className = "right";
 
+        if(user === null){
             const registerLink = document.createElement("a");
             registerLink.className = "registerLink";
             registerLink.textContent = "Register";
@@ -40,6 +41,29 @@ class MainUI{
 
             ul.appendChild(li)
             div.appendChild(ul)
+        } else {
+            let li = document.createElement("li");
+            const newPost = document.createElement("a");
+            newPost.className = "postLink";
+            newPost.textContent = "New Post";
+            li.appendChild(newPost);
+            ul.appendChild(li);
+
+            li = document.createElement("li");
+            const showAllPosts = document.createElement("a");
+            showAllPosts.className = "showAllLink";
+            showAllPosts.textContent = "Show All Posts";
+            li.appendChild(showAllPosts);
+            ul.appendChild(li);
+
+            li = document.createElement("li");
+            const showMyPosts = document.createElement("a");
+            showMyPosts.className = "showMyLink";
+            showMyPosts.textContent = "Show My Posts";
+            li.appendChild(showMyPosts);
+            ul.appendChild(li);
+
+            div.appendChild(ul);
         }
 
         navbar.appendChild(div);
