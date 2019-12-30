@@ -13,6 +13,7 @@ class PostEventGenerator {
         const data = {
             postTitle: document.querySelector('#titleInput').value,
             postBody: document.querySelector('#postBodyInput').value,
+            userId: lclStorage.getLoggedUser().id
         }
 
         if (data.postTitle === "" || data.postBody === "") {
@@ -30,6 +31,7 @@ class PostEventGenerator {
 
         data.categories = selectedItems;
         http.post(baseUrl + "post", data);
+        postUi.clearField();
     }
 
     newCategGeneration(e) {
@@ -63,14 +65,15 @@ class PostEventGenerator {
         http.post(baseUrl + "category", data).then((result)=>{
             const li = document.createElement("li");
             const checkBox = factory.generateCheckBox(result.name);
+            checkBox.classList.add("item");
             checkBox.setAttribute("value",result.name);
             li.appendChild(checkBox);
             document.querySelector(".item-collection").appendChild(li);
 
             e.target.previousElementSibling.remove();
             e.target.textContent = "Add New Category";
-            e.target.addEventListener("click", postEventHandler.newCategGeneration)
-            e.target.removeEventListener("click", postEventHandler.addNewCategory);
+            e.target.addEventListener("click", postEventHandler.newCategGeneration);
+            e.target.removeEventListener("click", postEventHandler.addNewCategory);   
         });
     }
 }

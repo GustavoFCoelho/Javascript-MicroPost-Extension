@@ -5,24 +5,31 @@
       "Password": "tata",
       "Email": "gustavo.coelho@tcs.com",
       "id": 1
+    },
+    {
+      "Username": "gustavo2",
+      "Password": "tata",
+      "Email": "email@email.com",
+      "id": 2
     }
   ],
   "post": [
     {
       "postTitle": "Longas tranças de um careca",
-      "postBody": "teste",
+      "postBody": "test",
+      "userId": 1,
       "categories": [
-        "Movie"
+        "Movie",
+        "Games",
+        "Series"
       ],
       "id": 1
     },
     {
       "postTitle": "Longas tranças de um careca",
-      "postBody": "teste",
-      "categories": [
-        "Movie",
-        "Games"
-      ],
+      "postBody": "TESTE",
+      "userId": 2,
+      "categories": [],
       "id": 2
     }
   ],
@@ -36,9 +43,8 @@
       "id": 2
     },
     {
-      "name": "teste",
+      "name": "Series",
       "id": 3
     }
-  ],
-  "rate": []
+  ]
 }

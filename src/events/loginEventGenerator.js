@@ -62,6 +62,7 @@ class LoginEventHandler{
                 if(user.Username === data.Username){
                     if(user.Password === data.Password){
                         mainUI.removeChildNodes();
+                        data.id = user.id;
                         lclStorage.setUser(data);
                         mainUI.loadMenu(data);
                         postUi.generatePosts(data);

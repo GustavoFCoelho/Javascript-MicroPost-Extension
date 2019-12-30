@@ -11,7 +11,6 @@ class MainUI{
 
         const a = document.createElement("a");
         a.classList.add("brand-logo");
-        a.classList.add("center");
         a.textContent = "MicroPost Application"
 
         div.appendChild(a);
@@ -46,6 +45,7 @@ class MainUI{
             const newPost = document.createElement("a");
             newPost.className = "postLink";
             newPost.textContent = "New Post";
+            newPost.addEventListener("click", RouterEvent.generateNewPostEvent)
             li.appendChild(newPost);
             ul.appendChild(li);
 
@@ -53,6 +53,7 @@ class MainUI{
             const showAllPosts = document.createElement("a");
             showAllPosts.className = "showAllLink";
             showAllPosts.textContent = "Show All Posts";
+            showAllPosts.addEventListener("click", RouterEvent.generateShowAllPostsEvent)
             li.appendChild(showAllPosts);
             ul.appendChild(li);
 
@@ -60,7 +61,16 @@ class MainUI{
             const showMyPosts = document.createElement("a");
             showMyPosts.className = "showMyLink";
             showMyPosts.textContent = "Show My Posts";
+            showMyPosts.addEventListener("click", RouterEvent.generateShowMyPostsEvent)
             li.appendChild(showMyPosts);
+            ul.appendChild(li);
+
+            li = document.createElement("li");
+            const logout = document.createElement("a");
+            logout.className = "logout";
+            logout.textContent = "Logout";
+            logout.addEventListener("click", RouterEvent.logout);
+            li.appendChild(logout);
             ul.appendChild(li);
 
             div.appendChild(ul);
